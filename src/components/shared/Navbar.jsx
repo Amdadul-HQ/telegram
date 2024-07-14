@@ -1,9 +1,13 @@
+'use client'
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { IoMenu, IoSearch } from "react-icons/io5";
 
 
 
 const Navbar = () => {
+    const {id} = useParams()
+    
     return (
         <header className="bg-[#2876a3]">
             <nav className="px-5 py-3 flex bg-[#2876a3] text-white items-center justify-between">
@@ -17,7 +21,7 @@ const Navbar = () => {
                 <IoSearch className="text-2xl"/>
             </div>
         </nav>
-        <div className="max-w-[375px] overflow-x-scroll">
+        <div className={`max-w-[375px] overflow-x-scroll ${id == undefined || 'hidden'}`}>
             <table> 
                 <thead className="text-base font-normal">
                     <tr className="text-white font-normal">

@@ -19,7 +19,7 @@ const PersonCard = ({person}) => {
             <div>
                 <div className='flex justify-between items-center'>
                 <h3 className='text-xl'>{creator.name || 'Beyond Chat'} </h3>
-                <p className='text-xs'>{new Date(creator.updated_at).getHours()}:{new Date(creator.updated_at).getMinutes()}</p>
+                <p className='text-xs'>{new Date(creator.updated_at).getUTCHours()}:{new Date(creator.updated_at).getUTCMinutes()}</p>
                 </div>
                 <p className='text-sm'>Lorem ipsum dolor sit amet consectetur</p>
             </div>
