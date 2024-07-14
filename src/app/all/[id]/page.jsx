@@ -11,6 +11,11 @@ import { FaTelegram } from "react-icons/fa6";
 import { useRouter } from 'next/navigation';
 
 const ChatBox = () => {
+    const monthNames = [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+      ];
+      
     const router = useRouter()
     const handleBack = ()=>{
         router.back();
@@ -60,6 +65,9 @@ const ChatBox = () => {
             }}>
                 {
                     chat.map(item => <div key={item.id} className='py-3'>
+                        <div className='sticky top-0'>
+                            <p className='text-center text-white my-3 bg-[#7676801F] w-fit px-3 py-2 rounded-3xl mx-auto'>{new Date(item.created_at).getDate()} {monthNames[new Date(item.created_at).getUTCMonth()]}</p>
+                        </div>
                         <div className={`flex items-end gap-x-1 px-1 ${item.sender.name =='BeyondChat' && 'flex-row-reverse'}`}>
                             <div>
                             <Image

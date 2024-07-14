@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { useState } from "react";
 import { IoMenu, IoSearch } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
@@ -17,6 +17,8 @@ import { IoMoonSharp } from "react-icons/io5";
 
 const Navbar = () => {
     const {id} = useParams()
+    const pathName = usePathname()
+    
     const [showAdd,setShowAdd] = useState(false)
     const [showbar,setShowbar] = useState(false)
     const [nightMode,setNightMode] = useState(false)
@@ -107,26 +109,26 @@ const Navbar = () => {
   </div>
 </div>
             </div>
-        <div className={` overflow-x-scroll ${id == undefined || 'hidden'}`}>
+        <div className={`overflow-x-scroll ${id == undefined || 'hidden'}`}>
             <table> 
                 <thead className="text-base font-normal">
                     <tr className="text-white font-normal">
-                    <td className="px-5 py-3 border-b-4 border-blue-500"><Link href='/all'>
+                    <td className={`px-5 py-3 ${pathName === '/all' && 'border-b-8 border-blue-500'}`}><Link href='/all'>
                         All
                         </Link></td>
-                        <td className="px-5 py-3">
+                        <td className={`px-5 py-3 ${pathName === '/regular' && 'border-b-8 border-blue-500'}`}>
                         <Link href='/regular'>
                         Regular
                         </Link></td>
-                        <td className="px-5 py-3">
+                        <td className={`px-5 py-3 ${pathName === '/unread' && 'border-b-8 border-blue-500'}`}>
                         <Link href="/unread">
                         Unread
                         </Link></td>
-                        <td className="px-5 py-3">
+                        <td className={`px-5 py-3 ${pathName === '/personal' && 'border-b-8 border-blue-500'}`}>
                         <Link href='/personal'>
                         Personal
                         </Link></td>
-                        <td className="px-5 py-3">
+                        <td className={`px-5 py-3 ${pathName === '/group' && 'border-b-8 border-blue-500'}`}>
                         <Link href='/group'>
                         Group
                         </Link></td>

@@ -10,18 +10,18 @@ const PersonCard = ({person}) => {
             <div className='rounded-full'>
                 <Image
                 src={`/assets/user1.jpg`}
-                width={60}
-                height={60}
+                width={50}
+                height={50}
                 alt=''
                 className='rounded-full'
                 />
             </div>
             <div className='flex-1'>
                 <div className='flex justify-between  items-center'>
-                <h3 className='text-xl'>{creator.name || 'Beyond Chat'} </h3>
-                <p className='text-xs'>{new Date(creator.updated_at).getUTCHours()}:{new Date(creator.updated_at).getUTCMinutes()}</p>
+                <h3 className='text-lg font-medium text-black'>{creator.name || 'Beyond Chat'} </h3>
+                <p className='text-xs text-gray-400'>{new Date(creator.updated_at).getUTCHours()}:{new Date(creator.updated_at).getUTCMinutes()}</p>
                 </div>
-                <p className='text-sm'>Lorem ipsum dolor sit amet consectetur</p>
+                <p className='text-sm text-blue-400'>Lorem ipsum dolor sit amet consectetur</p>
             </div>
         </div>
         </Link>
