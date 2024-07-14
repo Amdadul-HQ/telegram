@@ -54,7 +54,7 @@ const ChatBox = () => {
                     <IoMdMore className='text-3xl'/>
                 </div>
             </div>
-            <div className='w-screen min-h-screen bg-[url("/assets/telegrambg.jpeg")] bg-contain bg-fixed z-0 relative' style={{
+            <div className='w-screen min-h-screen bg-[url("/assets/telegrambg.jpeg")] bg-cover bg-fixed bg-no-repeat z-0 relative' style={{
            
                 
             }}>
@@ -80,7 +80,7 @@ const ChatBox = () => {
                         </div>
                         </div>)
                 }
-                <div className='bg-white flex items-center px-4 py-2'>
+                <div className='bg-white flex items-center px-4 py-2 z-50 sticky bottom-0 w-full mt-4'>
                     <div className='px-2'>
                         <label htmlFor='attach'><ImAttachment className='text-xl'/></label>
                     <input id='attach' type='file' className='hidden'/>
