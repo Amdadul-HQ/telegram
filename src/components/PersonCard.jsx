@@ -6,7 +6,7 @@ const PersonCard = ({person}) => {
     const {creator,id} = person
     return (
         <Link href={`/all/${id}`}>
-        <div className='flex items-center gap-x-3 py-2 bg-slate-100 px-3'>
+        <div className='flex items-center gap-x-3 py-2 bg-slate-100 px-3 w-full'>
             <div className='rounded-full'>
                 <Image
                 src={`/assets/user1.jpg`}
@@ -16,8 +16,8 @@ const PersonCard = ({person}) => {
                 className='rounded-full'
                 />
             </div>
-            <div>
-                <div className='flex justify-between items-center'>
+            <div className='flex-1'>
+                <div className='flex justify-between  items-center'>
                 <h3 className='text-xl'>{creator.name || 'Beyond Chat'} </h3>
                 <p className='text-xs'>{new Date(creator.updated_at).getUTCHours()}:{new Date(creator.updated_at).getUTCMinutes()}</p>
                 </div>

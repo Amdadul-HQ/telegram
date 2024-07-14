@@ -21,7 +21,7 @@ const Navbar = () => {
                 <IoSearch className="text-2xl"/>
             </div>
         </nav>
-        <div className={`max-w-[375px] overflow-x-scroll ${id == undefined || 'hidden'}`}>
+        <div className={` overflow-x-scroll ${id == undefined || 'hidden'}`}>
             <table> 
                 <thead className="text-base font-normal">
                     <tr className="text-white font-normal">

@@ -4,10 +4,28 @@ import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { IoMdMore } from "react-icons/io";
+import { ImAttachment } from "react-icons/im";
+import { BsEmojiSmile } from "react-icons/bs";
+import { HiOutlineMicrophone } from "react-icons/hi";
+import { FaTelegram } from "react-icons/fa6";
+import { useRouter } from 'next/navigation';
 
 const ChatBox = () => {
+    const router = useRouter()
+    const handleBack = ()=>{
+        router.back();
+    }
     const {id} = useParams()
     const [chat,setChat] = useState([])
+    const [showmic,setShowmic] = useState(false)
+    const handleInput = (e)=>{
+        if((e.target.value).length>0){
+            setShowmic(true)
+        }
+        else{
+            setShowmic(false)
+        }
+    }
 
     useEffect(()=>{
         fetch(`https://devapi.beyondchats.com/api/get_chat_messages?chat_id=${id}`)
@@ -19,7 +37,7 @@ const ChatBox = () => {
         <div>
             <div className='flex items-center justify-between py-2 z-10 sticky top-0 text-white px-4 bg-[#2876a3]'>
                 <div className='flex items-center gap-x-3'>
-                <IoIosArrowRoundBack className='text-4xl'/>
+                <IoIosArrowRoundBack onClick={handleBack} className='text-4xl'/>
                     <Image
                     src='/assets/user1.jpg'
                     width={50}
@@ -36,9 +54,9 @@ const ChatBox = () => {
                     <IoMdMore className='text-3xl'/>
                 </div>
             </div>
-            <div className='w-screen min-h-screen z-0 relative' style={{
-                background:"url('/assets/telegrambg.jpeg')",
-                backgroundPosition:'center'
+            <div className='w-screen min-h-screen bg-[url("/assets/telegrambg.jpeg")] bg-contain bg-fixed z-0 relative' style={{
+           
+                
             }}>
                 {
                     chat.map(item => <div key={item.id} className='py-3'>
@@ -62,6 +80,21 @@ const ChatBox = () => {
                         </div>
                         </div>)
                 }
+                <div className='bg-white flex items-center px-4 py-2'>
+                    <div className='px-2'>
+                        <label htmlFor='attach'><ImAttachment className='text-xl'/></label>
+                    <input id='attach' type='file' className='hidden'/>
+                    </div>
+                    <input onChange={handleInput} type="text" className='block h-[50px] w-full outline-none px-4' placeholder='Write a message' />
+                    <div className='flex items-center gap-x-2'>
+                        <BsEmojiSmile className='text-xl'/>
+                        {
+                            showmic ? <FaTelegram className='text-blue-400 text-xl'/> : <HiOutlineMicrophone className='text-xl'/>
+                        }
+                        
+                        
+                    </div>
+                </div>
             </div>
         </div>
     );
