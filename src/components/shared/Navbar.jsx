@@ -1,16 +1,24 @@
 'use client'
+import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { IoMenu, IoSearch } from "react-icons/io5";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { IoAddCircle } from "react-icons/io5";
+import { LuUsers } from "react-icons/lu";
 
 
 
 const Navbar = () => {
     const {id} = useParams()
+    const [showAdd,setShowAdd] = useState(false)
     const [showbar,setShowbar] = useState(false)
     const handleShowSidebar = () => {
         setShowbar(!showbar)
+    }
+    const handleEmoji = ()=>{
+        setShowAdd(!showAdd)
     }
     return (
         <header className="bg-[#2876a3]">
@@ -32,7 +40,37 @@ const Navbar = () => {
     <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
     <div className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
       {/* Sidebar content here */}
-     
+     <div>
+        <Image
+        src='/assets/user1.jpg'
+        width={80}
+        height={80}
+        alt=""
+        className="rounded-full"
+        />
+        <div onClick={handleEmoji} className="flex justify-between border-b-2 pb-2 items-center">
+            <div>
+            <h3 className="text-xl text-black font-medium">Amdadul Haque</h3>
+            <p className="text-base text-blue-500 font-light">Set Emoji Status</p>
+            </div>
+            <div>
+                <MdKeyboardArrowDown className={`text-2xl transition-all ${showAdd ? '-rotate-180' : '-rotate-0'} duration-500`}/>
+            </div>
+        </div>
+        <p className={`text-lg flex items-center gap-x-6 py-3 border-b-2 transition-all duration-300 ${showAdd ? 'block' : 'hidden'}`}>
+            <IoAddCircle className="text-blue-500 text-3xl"/>
+            Add Account
+        </p>
+        <ul>
+            <li>New Group</li>
+            <li>New Channel</li>
+            <li>Contact</li>
+            <li>Calls</li>
+            <li>Saved Message</li>
+            <li>Setting</li>
+            <li>Night Mode</li>
+        </ul>
+     </div>
     </div>
   </div>
 </div>
