@@ -3,7 +3,7 @@ import AllChat from "./all/page";
 
 export default function Home() {
   return (
-    <main className="flex">
+    <main className="flex dark:bg-slate-900">
       <section className="lg:w-[40%] w-full lg:h-full h-[calc(100vh-120px)] dark:bg-slate-900">
       <AllChat/>
       </section>
