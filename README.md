@@ -10,13 +10,8 @@ This project is a clone of the Telegram app built using Next.js and React. It in
 
 ## Live Demo
 
-Check out the live demo [here](#). *(Replace `#` with your live link)*
+Check out the live demo [here](https://telegram-two-vert.vercel.app/). 
 
-## Screenshots
-
-![Light Theme](screenshots/light-theme.png)
-![Dark Theme](screenshots/dark-theme.png)
-![Sidebar](screenshots/sidebar.png)
 
 ## Installation
 
