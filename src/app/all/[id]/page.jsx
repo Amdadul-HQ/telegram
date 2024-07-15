@@ -59,7 +59,7 @@ const ChatBox = () => {
                     <IoMdMore className='text-3xl'/>
                 </div>
             </div>
-            <div className='w-screen min-h-screen bg-[url("/assets/telegrambg.jpeg")] bg-cover bg-fixed bg-no-repeat z-0 relative' style={{
+            <div className='max-w-screen min-h-screen bg-[url("/assets/telegrambg.jpeg")] bg-cover bg-fixed bg-no-repeat z-0 relative' style={{
            
                 
             }}>
