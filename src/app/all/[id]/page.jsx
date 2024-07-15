@@ -40,7 +40,7 @@ const ChatBox = () => {
 
     return (
         <div>
-            <div className='flex items-center justify-between py-2 z-10 sticky top-0 text-white px-4 bg-[#2876a3]'>
+            <div className='flex items-center justify-between py-2 z-10 sticky top-0 text-white px-4 dark:bg-slate-900 bg-[#2876a3]'>
                 <div className='flex items-center gap-x-3'>
                 <IoIosArrowRoundBack onClick={handleBack} className='text-4xl'/>
                     <Image
@@ -78,7 +78,7 @@ const ChatBox = () => {
                             className='rounded-full translate-y-3'
                             />
                             </div>
-                        <div className={`bg-white max-w-[80%] px-3 pb-5 pt-3  rounded-3xl relative ${item.sender.name =='BeyondChat' ? 'rounded-br-none' : 'rounded-bl-none'}`}>
+                        <div className={`bg-white dark:bg-slate-900 dark:text-slate-100 max-w-[80%] px-3 pb-5 pt-3  rounded-3xl relative ${item.sender.name =='BeyondChat' ? 'rounded-br-none' : 'rounded-bl-none'}`}>
                             <h3 className='text-sm font-medium'>{item.sender.name}</h3>
                             
                             <p className='text-sm font-normal'>{item.message}</p>
@@ -88,12 +88,12 @@ const ChatBox = () => {
                         </div>
                         </div>)
                 }
-                <div className='bg-white flex items-center px-4 py-2 z-50 sticky bottom-0 w-full mt-4'>
+                <div className='bg-white dark:bg-slate-900 dark:text-slate-100 flex items-center px-4 py-2 z-50 sticky bottom-0 w-full mt-4'>
                     <div className='px-2'>
                         <label htmlFor='attach'><ImAttachment className='text-xl'/></label>
                     <input id='attach' type='file' className='hidden'/>
                     </div>
-                    <input onChange={handleInput} type="text" className='block h-[50px] w-full outline-none px-4' placeholder='Write a message' />
+                    <input onChange={handleInput} type="text" className='block h-[50px] w-full dark:bg-slate-900 outline-none px-4' placeholder='Write a message' />
                     <div className='flex items-center gap-x-2'>
                         <BsEmojiSmile className='text-xl'/>
                         {
