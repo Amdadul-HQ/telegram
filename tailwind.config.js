@@ -5,8 +5,13 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode:"class",
   theme: {
     extend: {
+      colors:{
+        'dark':'232A3C',
+        'medium':'293245'
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -17,7 +22,7 @@ module.exports = {
   plugins: [
     require('daisyui'),
   ],
-  daisyui: {
-    themes: ["light", "dark"], // Add the themes you want to use
-  },
+  // daisyui: {
+  //   themes: ["light", "dark"], // Add the themes you want to use
+  // },
 };
