@@ -2,14 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-const PersonCard = ({person}) => {
+const PersonCard = ({person,idx}) => {
     const {creator,id} = person
     return (
         <Link href={`/all/${id}`}>
         <div className='flex items-center gap-x-3 py-2 dark:bg-slate-900 dark:border-none px-3 w-full'>
             <div className='rounded-full'>
                 <Image
-                src={`/assets/user1.jpg`}
+                src={`/assets/user${idx + 1}.jpg`}
                 width={50}
                 height={50}
                 alt=''
